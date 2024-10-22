@@ -113,8 +113,11 @@ func propagateMetaForWorkStatus(ws *workStatus, resolution *combinedStatusResolu
 	if ws.lastUpdateTime != nil {
 		protoLastUpdateTimestamp = timestamppb.New(ws.lastUpdateTime.Time)
 	}
-
+	
 	return map[string]interface{}{
 		"lastReturnedUpdateTimestamp": protoLastUpdateTimestamp,
+		"lastGeneration": "",
+		"lastGenerationIsApplied": "",
+		"lastCurrencyUpdateTime": "",
 	}
 }
